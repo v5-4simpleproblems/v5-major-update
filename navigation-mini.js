@@ -29,16 +29,118 @@ const FIREBASE_CONFIG = {
 // =========================================================================
 
 // --- Configuration ---
-// This object defines the default "Dark" theme, containing only necessary properties for navigation-mini.js
+// Full Default Theme (Dark)
 const DEFAULT_THEME = {
+    'name': 'Dark',
+    'logo-src': '/images/logo.png',
+    'navbar-bg': '#000000',
+    'navbar-border': 'rgb(31 41 55)',
     'avatar-gradient': 'linear-gradient(135deg, #374151 0%, #111827 100%)',
+    'avatar-border': '#4b5563',
+    'menu-bg': '#000000',
+    'menu-border': 'rgb(55 65 81)',
+    'menu-divider': '#374151',
+    'menu-text': '#d1d5db',
+    'menu-username-text': '#ffffff',
+    'menu-email-text': '#9ca3af',
+    'menu-item-hover-bg': 'rgb(55 65 81)',
+    'menu-item-hover-text': '#ffffff',
+    'glass-menu-bg': 'rgba(10, 10, 10, 0.8)',
+    'glass-menu-border': 'rgba(55, 65, 81, 0.8)',
+    'logged-out-icon-bg': '#010101',
+    'logged-out-icon-border': '#374151',
+    'logged-out-icon-color': '#DADADA',
+    'glide-icon-color': '#ffffff',
+    'glide-gradient-left': 'linear-gradient(to right, #000000, transparent)',
+    'glide-gradient-right': 'linear-gradient(to left, #000000, transparent)',
+    'tab-text': '#9ca3af',
+    'tab-hover-text': '#ffffff',
+    'tab-hover-border': '#d1d5db',
+    'tab-hover-bg': 'rgba(79, 70, 229, 0.05)',
+    'tab-active-text': '#4f46e5',
+    'tab-active-border': '#4f46e5',
+    'tab-active-bg': 'rgba(79, 70, 229, 0.1)',
+    'tab-active-hover-text': '#6366f1',
+    'tab-active-hover-border': '#6366f1',
+    'tab-active-hover-bg': 'rgba(79, 70, 229, 0.15)',
+    'pin-btn-border': '#4b5563',
+    'pin-btn-hover-bg': '#374151',
+    'pin-btn-icon-color': '#d1d5db',
+    'hint-bg': '#010101',
+    'hint-border': '#374151',
+    'hint-text': '#ffffff',
+    'page-bg': '#040404'
 };
 
-const PAGE_CONFIG_URL = '../page-identification.json'; // <--- NEW CONSTANT
+const PAGE_CONFIG_URL = '../page-identification.json';
 const PINNED_PAGE_KEY = 'navbar_pinnedPage';
 const PIN_BUTTON_HIDDEN_KEY = 'navbar_pinButtonHidden';
-const THEME_STORAGE_KEY = 'user-navbar-theme'; // Added for compatibility
-const lightThemeNames = ['Light', 'Lavender', 'Rose Gold', 'Mint']; // Added for compatibility
+const THEME_STORAGE_KEY = 'user-navbar-theme'; 
+const lightThemeNames = ['Light']; 
+
+window.applyTheme = (theme) => {
+    const root = document.documentElement;
+    if (!root) return;
+    const themeToApply = theme && typeof theme === 'object' ? theme : DEFAULT_THEME;
+    
+    // Determine if it's a light theme
+    const isLightTheme = lightThemeNames.includes(themeToApply.name);
+
+    for (const [key, value] of Object.entries(themeToApply)) {
+        if (key !== 'logo-src' && key !== 'name') {
+            root.style.setProperty(`--${key}`, value);
+        }
+    }
+
+    // Apply specific colors for light themes
+    if (isLightTheme) {
+        root.style.setProperty('--menu-username-text', '#000000'); 
+        root.style.setProperty('--menu-email-text', '#333333');   
+    } else {
+        root.style.setProperty('--menu-username-text', themeToApply['menu-username-text'] || DEFAULT_THEME['menu-username-text']);
+        root.style.setProperty('--menu-email-text', themeToApply['menu-email-text'] || DEFAULT_THEME['menu-email-text']);
+    }
+
+    const logoImg = document.getElementById('navbar-logo');
+    // Also update logo on index page if it exists there (it might have a different ID or be same)
+    const indexLogo = document.querySelector('.auth-navbar img'); 
+    const targetLogo = logoImg || indexLogo;
+
+    if (targetLogo) {
+        let newLogoSrc;
+        if (themeToApply.name === 'Christmas') {
+            newLogoSrc = '/images/logo-christmas.png';
+        } else {
+            newLogoSrc = themeToApply['logo-src'] || DEFAULT_THEME['logo-src'];
+        }
+        
+        // Handle relative paths if we are in a subdir
+        if (!newLogoSrc.startsWith('http') && !newLogoSrc.startsWith('/')) {
+             // Basic check, usually paths in themes.json are root absolute like /images/...
+        }
+
+        const currentSrc = targetLogo.src;
+        // Use a dummy anchor to resolve absolute path for comparison
+        const a = document.createElement('a');
+        a.href = newLogoSrc;
+        
+        if (currentSrc !== a.href) {
+            targetLogo.src = newLogoSrc;
+        }
+
+        // Logo Tinting Logic
+        const noFilterThemes = ['Dark', 'Light', 'Christmas'];
+        if (noFilterThemes.includes(themeToApply.name)) {
+            targetLogo.style.filter = ''; 
+            targetLogo.style.transform = '';
+        } else {
+            const tintColor = themeToApply['tab-active-text'] || '#ffffff';
+            targetLogo.style.filter = `drop-shadow(100px 0 0 ${tintColor})`;
+            targetLogo.style.transform = 'translateX(-100px)';
+        }
+    }
+};
+
 
 /**
  * NEW FUNCTION: applyCounterZoom

@@ -18,11 +18,11 @@
     
     <style>
         :root {
-            --bg-page: #040404;
-            --bg-container: #000000;
-            --border-color: #333;
-            --text-primary: #c0c0c0;
-            --text-secondary: #a0a0a0;
+            --bg-page: var(--page-bg);
+            --bg-container: var(--menu-bg);
+            --border-color: var(--menu-border);
+            --text-primary: var(--menu-text);
+            --text-secondary: var(--tab-text);
         }
 
         body { 
@@ -67,7 +67,7 @@
 </script>
     
 </head>
-<body class="text-white min-h-screen">
+<body class="min-h-screen" style="background-color: var(--page-bg); color: var(--menu-text);">
 
     
     <main class="py-16 px-4">
