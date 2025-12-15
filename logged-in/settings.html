@@ -167,9 +167,9 @@
         /* Container style to match tab look (used for rate limit and input wrapper) */
         /* MODIFICATION: Hard-coded default theme */
         .settings-box { 
-            border: 1px solid #333; 
+            border: 1px solid var(--menu-border); 
             border-radius: 1rem; 
-            background-color: #0000000; 
+            background-color: var(--menu-bg); 
             transition: all 0.2s;
         }
         
@@ -177,26 +177,26 @@
         .input-text-style {
             width: 100%; 
             padding: 0.75rem; 
-            border: 1px solid #252525; 
-            background-color: #111111; 
+            border: 1px solid var(--menu-border); 
+            background-color: var(--menu-bg); 
             border-radius: 0.5rem; 
-            color: #c0c0c0; 
+            color: var(--menu-text); 
             transition: all 0.2s;
         }
         .input-text-style:focus {
-            border-color: #505050; 
+            border-color: var(--tab-active-border); 
             outline: none;
-            box-shadow: 0 0 0 2px rgba(80, 80, 80, 0.5);
+            box-shadow: 0 0 0 2px var(--tab-active-bg);
         }
         
         /* Style for the Panic Key input (single character) */
         .input-key-style {
             width: 4rem; /* Fixed width for a single key */
             padding: 0.75rem;
-            border: 1px solid #252525; 
-            background-color: #111111; 
+            border: 1px solid var(--menu-border); 
+            background-color: var(--menu-bg); 
             border-radius: 0.5rem; 
-            color: #c0c0c0; 
+            color: var(--menu-text); 
             transition: all 0.2s;
             font-size: 1.1rem;
             text-align: center;
@@ -209,18 +209,18 @@
             text-transform: none;
         }
          .input-key-style:focus {
-            border-color: #505050; 
+            border-color: var(--tab-active-border); 
             outline: none;
-            box-shadow: 0 0 0 2px rgba(80, 80, 80, 0.5);
+            box-shadow: 0 0 0 2px var(--tab-active-bg);
          }
         
         .input-select-style {
             width: 100%; 
             padding: 0.75rem; 
-            border: 1px solid #252525; 
-            background-color: #111111; 
+            border: 1px solid var(--menu-border); 
+            background-color: var(--menu-bg); 
             border-radius: 0.5rem; 
-            color: #c0c0c0; 
+            color: var(--menu-text); 
             transition: all 0.2s;
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
             background-position: right 0.5rem center;
@@ -231,9 +231,9 @@
             appearance: none;
         }
         .input-select-style:focus {
-            border-color: #505050; 
+            border-color: var(--tab-active-border); 
             outline: none;
-            box-shadow: 0 0 0 2px rgba(80, 80, 80, 0.5);
+            box-shadow: 0 0 0 2px var(--tab-active-bg);
         }
         
         .general-message-area { min-height: 20px; margin-top: 1rem; font-weight: 400; }
@@ -260,15 +260,15 @@
             padding: 0.75rem;
             font-size: 1rem;
             font-weight: 300;
-            color: #c0c0c0;
-            background: #111111;
-            border: 1px solid #252525;
+            color: var(--menu-text);
+            background: var(--menu-bg);
+            border: 1px solid var(--menu-border);
             border-radius: 0.5rem;
             cursor: pointer;
             transition: all 0.2s;
         }
         .custom-select-trigger:hover {
-            border-color: #505050;
+            border-color: var(--tab-active-border);
         }
         .custom-options {
             position: absolute;
@@ -276,11 +276,11 @@
             top: 100%;
             left: 0;
             right: 0;
-            border: 1px solid #252525;
+            border: 1px solid var(--menu-border);
             border-top: 0;
             border-bottom-left-radius: 0.5rem;
             border-bottom-right-radius: 0.5rem;
-            background: #111111;
+            background: var(--menu-bg);
             transition: all 0.2s;
             opacity: 0;
             visibility: hidden;
@@ -294,7 +294,7 @@
             opacity: 1;
             visibility: visible;
             pointer-events: all;
-            border-color: #505050;
+            border-color: var(--tab-active-border);
             box-shadow: 0 4px 6px rgba(0,0,0,0.5);
         }
         .custom-option {
@@ -303,17 +303,17 @@
             padding: 0.75rem;
             font-size: 1rem;
             font-weight: 300;
-            color: #c0c0c0;
+            color: var(--menu-text);
             cursor: pointer;
             transition: all 0.2s;
         }
         .custom-option:hover {
-            background-color: #252525;
-            color: #ffffff;
+            background-color: var(--menu-item-hover-bg);
+            color: var(--menu-item-hover-text);
         }
         .custom-option.selected {
-            background-color: #1a1a1a;
-            color: #ffffff;
+            background-color: var(--tab-active-bg);
+            color: var(--tab-active-text);
             font-weight: 400;
         }
         .custom-option-content {
@@ -370,7 +370,7 @@
         .theme-button {
             /* MODIFICATION: Border color is now theme-aware */
             border: 2px solid var(--tab-active-border, #4f46e5); 
-            background-color: #111; /* This will be overridden by inline style */
+            background-color: var(--menu-bg); /* This will be overridden by inline style */
             border-radius: 0.75rem; 
             padding: 0.75rem; /* MODIFICATION: Reduced padding */
             text-align: center;
@@ -394,7 +394,7 @@
         
         .theme-button-name {
             font-weight: 500;
-            color: #e0e0e0; /* This will be overridden by inline style */
+            color: var(--menu-text); /* This will be overridden by inline style */
         }
         
         /* --- NEW: Modal and Loading Styles (from index.html) --- */
@@ -411,18 +411,18 @@
           align-items: center;
         }
         .modal-content {
-          background-color: #1a1a1a; /* Darker modal */
+          background-color: var(--menu-bg); /* Darker modal */
           padding: 20px;
           border-radius: 10px;
-          border: 1px solid #333;
+          border: 1px solid var(--menu-border);
           width: 90%;
           max-width: 400px;
           text-align: center;
-          color: white;
+          color: var(--menu-text);
           position: relative;
         }
         .modal-close {
-          color: #aaa;
+          color: var(--tab-text);
           position: absolute;
           top: 10px;
           right: 15px;
@@ -431,7 +431,7 @@
           cursor: pointer;
         }
         .modal-close:hover {
-          color: #fff;
+          color: var(--menu-text);
         }
         .modal-buttons {
           display: flex;
@@ -511,10 +511,10 @@
             flex-direction: column;
         }
         #cropperContent {
-            background-color: #000000;
+            background-color: var(--menu-bg);
             padding: 0;
             border-radius: 1rem;
-            border: 1px solid #333;
+            border: 1px solid var(--menu-border);
             display: flex;
             flex-direction: column;
             align-items: stretch;
@@ -563,8 +563,8 @@
             transform: scale(1.1);
         }
         .color-option.selected {
-            border-color: white;
-            box-shadow: 0 0 0 2px #4f46e5; /* Ring effect */
+            border-color: var(--menu-text);
+            box-shadow: 0 0 0 2px var(--tab-active-border); /* Ring effect */
         }
     </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1D4F692C1Q"></script>
@@ -580,7 +580,7 @@
     <div id="page-content">
         
         <header class="flex justify-between items-center p-4 border-b border-[#1a1a1a]">
-            <h1 class="text-2xl font-bold text-white">4SP Settings</h1>
+            <h1 class="text-2xl font-bold" style="color: var(--menu-text)">4SP Settings</h1>
             
             <div class="flex items-center gap-2">
                  </div>
@@ -636,16 +636,16 @@
     <div id="cropperModal">
         <div id="cropperContent">
             <!-- Header -->
-            <div class="flex justify-between items-center p-6 border-b border-[#333] bg-black">
-                <h3 class="text-2xl font-bold text-white">Adjust Profile Picture</h3>
+            <div class="flex justify-between items-center p-6 border-b border-[#333]" style="background-color: var(--navbar-bg)">
+                <h3 class="text-2xl font-bold" style="color: var(--menu-text)">Adjust Profile Picture</h3>
                 <button id="cancelCropBtn" class="btn-toolbar-style w-10 h-10 flex items-center justify-center p-0 rounded-xl">
                      <i class="fa-solid fa-xmark fa-xl"></i>
                 </button>
             </div>
             
             <!-- Body -->
-            <div class="flex flex-col items-center p-6 bg-[#0a0a0a]">
-                <p class="text-sm text-gray-400 mb-4">Drag to move. Scroll to resize the selection.</p>
+            <div class="flex flex-col items-center p-6" style="background-color: var(--menu-bg)">
+                <p class="text-sm mb-4" style="color: var(--tab-text)">Drag to move. Scroll to resize the selection.</p>
                 
                 <div id="cropperCanvasContainer" class="relative mb-6 border border-[#333] rounded-lg overflow-hidden">
                     <canvas id="cropperCanvas"></canvas>

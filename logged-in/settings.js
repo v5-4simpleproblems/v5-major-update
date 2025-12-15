@@ -604,9 +604,9 @@
          */
         function getChangePasswordSection() {
             return `
-                <h3 class="text-xl font-bold text-white mb-2 mt-8">Change Password</h3>
+                <h3 class="text-xl font-bold style="color: var(--menu-text)" mb-2 mt-8">Change Password</h3>
                 <div id="passwordChangeSection" class="settings-box w-full p-4">
-                    <p class="text-sm font-light text-gray-400 mb-3">
+                    <p class="text-sm font-light style="color: var(--tab-text)" mb-3">
                         Change your password. You must provide your current password for security.
                     </p>
                     
@@ -648,8 +648,8 @@
                 let iconHtml = config.icon.startsWith('<i') ? config.icon : `<img src="${config.icon}" alt="${config.name} Icon" class="h-6 w-auto mr-3">`;
 
                 return `
-                    <div class="flex justify-between items-center px-4 py-4 border-b border-[#252525] last:border-b-0">
-                        <div class="flex items-center text-lg text-white">
+                    <div class="flex justify-between items-center px-4 py-4 border-b style="border-color: var(--menu-border)" last:border-b-0">
+                        <div class="flex items-center text-lg style="color: var(--menu-text)"">
                             ${iconHtml}
                             ${config.name}
                             ${isPrimary ? '<span class="text-xs text-yellow-400 ml-2 font-normal">(Primary)</span>' : ''}
@@ -682,8 +682,8 @@
                     let iconHtml = config.icon.startsWith('<i') ? config.icon : `<img src="${config.icon}" alt="${config.name} Icon" class="h-6 w-auto mr-3">`;
 
                     return `
-                        <div class="flex justify-between items-center px-4 py-4 border-b border-[#252525] last:border-b-0">
-                            <div class="flex items-center text-lg text-white">
+                        <div class="flex justify-between items-center px-4 py-4 border-b style="border-color: var(--menu-border)" last:border-b-0">
+                            <div class="flex items-center text-lg style="color: var(--menu-text)"">
                                 ${iconHtml}
                                 ${config.name}
                             </div>
@@ -708,7 +708,7 @@
             
             if (!primaryProviderId) { // No primary provider found
                 deletionContent = `
-                    <h3 class="text-xl font-bold text-white mb-2 mt-8">Delete Account</h3>
+                    <h3 class="text-xl font-bold style="color: var(--menu-text)" mb-2 mt-8">Delete Account</h3>
                     <div id="deletionSection" class="settings-box w-full bg-red-900/10 border-red-700/50 p-4">
                         <p class="text-sm font-light text-red-300 mb-3">
                             <i class="fa-solid fa-triangle-exclamation mr-1"></i> 
@@ -718,7 +718,7 @@
                 `;
             } else if (primaryProviderId === 'password') {
                 deletionContent = `
-                    <h3 class="text-xl font-bold text-white mb-2 mt-8">Delete Account</h3>
+                    <h3 class="text-xl font-bold style="color: var(--menu-text)" mb-2 mt-8">Delete Account</h3>
                     <div id="deletionSection" class="settings-box w-full bg-red-900/10 border-red-700/50 p-4">
                         <p class="text-sm font-light text-red-300 mb-3">
                             <i class="fa-solid fa-triangle-exclamation mr-1"></i> 
@@ -743,7 +743,7 @@
                 `;
             } else {
                 deletionContent = `
-                    <h3 class="text-xl font-bold text-white mb-2 mt-8">Delete Account</h3>
+                    <h3 class="text-xl font-bold style="color: var(--menu-text)" mb-2 mt-8">Delete Account</h3>
                     <div id="deletionSection" class="settings-box w-full bg-red-900/10 border-red-700/50 p-4">
                         <p class="text-sm font-light text-red-300 mb-3">
                             <i class="fa-solid fa-triangle-exclamation mr-1"></i> 
@@ -765,12 +765,12 @@
 
             // --- Combined HTML for Account Management ---
             return `
-                <h3 class="text-xl font-bold text-white mb-2 mt-8">Linked Providers</h3>
+                <h3 class="text-xl font-bold style="color: var(--menu-text)" mb-2 mt-8">Linked Providers</h3>
                 <div class="settings-box w-full mb-4 p-0" data-section="linked-providers">
                     ${linkedProvidersHtml}
                 </div>
                 
-                <h3 class="text-xl font-bold text-white mb-2">Link New Providers</h3>
+                <h3 class="text-xl font-bold style="color: var(--menu-text)" mb-2">Link New Providers</h3>
                 <div class="settings-box w-full flex flex-col gap-0 p-0">
                     ${availableProvidersHtml}
                 </div>
@@ -793,7 +793,7 @@
              }
 
              return `
-                 <h2 class="text-3xl font-bold text-white mb-6">General Settings</h2>
+                 <h2 class="text-3xl font-bold style="color: var(--menu-text)" mb-6">General Settings</h2>
                  
                  <div class="w-full">
                     
@@ -807,12 +807,12 @@
                         </span>
                     </div>
 
-                    <h3 class="text-xl font-bold text-white mb-2">Account Username</h3>
+                    <h3 class="text-xl font-bold style="color: var(--menu-text)" mb-2">Account Username</h3>
                     
                     <div id="usernameSection" class="settings-box transition-all duration-300 p-4">
                         
                         <div id="viewMode" class="flex justify-between items-center">
-                            <p class="text-lg text-gray-400 leading-relaxed">
+                            <p class="text-lg style="color: var(--tab-text)" leading-relaxed">
                                 Current: <span id="currentUsernameText" class="text-emphasis text-blue-400">${currentUsername}</span>
                             </p>
                             <button id="enterEditModeBtn" class="btn-toolbar-style" style="padding: 0.5rem 0.75rem;">
@@ -820,15 +820,15 @@
                             </button>
                         </div>
 
-                        <div id="editMode" class="hidden flex-col gap-3 pt-4 border-t border-[#252525]">
-                            <label for="newUsernameInput" class="block text-gray-400 text-sm font-light">New Username</label>
+                        <div id="editMode" class="hidden flex-col gap-3 pt-4 border-t style="border-color: var(--menu-border)"">
+                            <label for="newUsernameInput" class="block style="color: var(--tab-text)" text-sm font-light">New Username</label>
                             <input type="text" id="newUsernameInput" value="${currentUsername}" maxlength="${MAX_LENGTH}"
                                    class="input-text-style w-full" 
                                    placeholder="${MIN_LENGTH}-${MAX_LENGTH} characters, only allowed symbols">
                             
                             <div class="flex justify-between items-center pt-2">
                                 <p class="text-xs text-gray-500 font-light whitespace-nowrap">
-                                    Length: <span id="minLength" class="font-semibold text-gray-400">${MIN_LENGTH}</span>/<span id="charCount" class="font-semibold text-gray-400">${currentUsername.length}</span>/<span id="maxLength" class="font-semibold text-gray-400">${MAX_LENGTH}</span>
+                                    Length: <span id="minLength" class="font-semibold style="color: var(--tab-text)"">${MIN_LENGTH}</span>/<span id="charCount" class="font-semibold style="color: var(--tab-text)"">${currentUsername.length}</span>/<span id="maxLength" class="font-semibold style="color: var(--tab-text)"">${MAX_LENGTH}</span>
                                 </p>
                                 
                                 <div class="flex gap-2">
@@ -862,20 +862,20 @@
             ).join('');
 
             return `
-                <h2 class="text-3xl font-bold text-white mb-6">Privacy & Security</h2>
+                <h2 class="text-3xl font-bold style="color: var(--menu-text)" mb-6">Privacy & Security</h2>
                 
                 <div class="w-full">
-                    <h3 class="text-xl font-bold text-white mb-2">Panic Key Settings</h3>
+                    <h3 class="text-xl font-bold style="color: var(--menu-text)" mb-2">Panic Key Settings</h3>
                     <div id="panicKeySection" class="settings-box transition-all duration-300 p-4">
-                        <p class="text-sm font-light text-gray-400 mb-4">
+                        <p class="text-sm font-light style="color: var(--tab-text)" mb-4">
                             Configure up to 3 panic keys. Pressing the specified key (without Shift, Ctrl, or Alt) on any page will redirect you to the URL you set.
                             <br>
                             <span class="text-yellow-400">Valid keys:</span> a-z, 0-9, and &#96; - = [ ] \\ ; ' , . /
                         </p>
                         
                         <div class="flex items-center gap-4 px-2 mb-2">
-                            <label class="block text-gray-400 text-sm font-light" style="width: 4rem; text-align: center;">Key</label>
-                            <label class="block text-gray-400 text-sm font-light flex-grow">Redirect URL</label>
+                            <label class="block style="color: var(--tab-text)" text-sm font-light" style="width: 4rem; text-align: center;">Key</label>
+                            <label class="block style="color: var(--tab-text)" text-sm font-light flex-grow">Redirect URL</label>
                         </div>
 
                         <div class="flex items-center gap-4 mb-3">
@@ -893,7 +893,7 @@
                             <input type="url" id="panicUrl3" class="input-text-style" placeholder="e.g., https://wikipedia.org">
                         </div>
                         
-                        <div class="flex justify-between items-center pt-4 border-t border-[#252525]">
+                        <div class="flex justify-between items-center pt-4 border-t style="border-color: var(--menu-border)"">
                             <p id="panicKeyMessage" class="general-message-area text-sm"></p>
                             <button id="applyPanicKeyBtn" class="btn-toolbar-style btn-primary-override w-36" style="padding: 0.5rem 0.75rem;">
                                 <i class="fa-solid fa-check mr-1"></i> Apply Keys
@@ -905,15 +905,15 @@
                 </div>
                 
                 <div class="w-full mt-8">
-                    <h3 class="text-xl font-bold text-white mb-2">Tab Disguise (URL Changer)</h3>
+                    <h3 class="text-xl font-bold style="color: var(--menu-text)" mb-2">Tab Disguise (URL Changer)</h3>
                     <div id="urlChangerSection" class="settings-box transition-all duration-300 p-4">
-                        <p class="text-sm font-light text-gray-400 mb-4">
+                        <p class="text-sm font-light style="color: var(--tab-text)" mb-4">
                             Change the title and favicon of the website to disguise it. This setting is saved locally in your browser.
                         </p>
                         
                         <div class="flex flex-col gap-4">
                             <div>
-                                <label for="tabDisguiseMode" class="block text-gray-400 text-sm font-light mb-2">Mode</label>
+                                <label for="tabDisguiseMode" class="block style="color: var(--tab-text)" text-sm font-light mb-2">Mode</label>
                                 <select id="tabDisguiseMode" class="input-select-style">
                                     <option value="none">None (Use 4SP Default)</option>
                                     <option value="preset">Use a Preset</option>
@@ -922,7 +922,7 @@
                             </div>
                             
                             <div id="tabDisguisePresetGroup" class="hidden">
-                                <label for="tabDisguisePreset" class="block text-gray-400 text-sm font-light mb-2">Preset</label>
+                                <label for="tabDisguisePreset" class="block style="color: var(--tab-text)" text-sm font-light mb-2">Preset</label>
                                 <select id="tabDisguisePreset" class="input-select-style">
                                     ${presetOptions}
                                 </select>
@@ -930,16 +930,16 @@
                             
                             <div id="tabDisguiseCustomGroup" class="hidden flex flex-col gap-4">
                                 <div>
-                                    <label for="customTabTitle" class="block text-gray-400 text-sm font-light mb-2">Custom Title</label>
+                                    <label for="customTabTitle" class="block style="color: var(--tab-text)" text-sm font-light mb-2">Custom Title</label>
                                     <input type="text" id="customTabTitle" class="input-text-style" placeholder="e.g., Google Docs">
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label for="faviconFetchInput" class="block text-gray-400 text-sm font-light mb-2">Custom Favicon (Fetch from Domain)</label>
+                                    <label for="faviconFetchInput" class="block style="color: var(--tab-text)" text-sm font-light mb-2">Custom Favicon (Fetch from Domain)</label>
                                     <div class="flex items-center gap-2">
                                         <input type="text" id="faviconFetchInput" class="input-text-style" placeholder="e.g., google.com">
                                         <button type="button" id="fetchFaviconBtn" class="btn-toolbar-style btn-primary-override w-28" style="padding: 0.5rem 0.75rem;">Fetch</button>
-                                        <div id="favicon-fetch-preview-container" class="w-10 h-10 border border-[#252525] bg-[#111111] rounded-md flex items-center justify-center p-1 flex-shrink-0">
+                                        <div id="favicon-fetch-preview-container" class="w-10 h-10 border style="border-color: var(--menu-border)" bg-[#111111] rounded-md flex items-center justify-center p-1 flex-shrink-0">
                                             <img src="" alt="Preview" class="w-full h-full object-contain" style="display: none;">
                                         </div>
                                     </div>
@@ -947,7 +947,7 @@
                                 </div>
                         </div>
 
-                        <div class="flex justify-between items-center pt-4 mt-4 border-t border-[#252525]">
+                        <div class="flex justify-between items-center pt-4 mt-4 border-t style="border-color: var(--menu-border)"">
                             <p id="urlChangerMessage" class="general-message-area text-sm"></p>
                             <button id="applyUrlChangerBtn" class="btn-toolbar-style btn-primary-override w-36" style="padding: 0.5rem 0.75rem;">
                                 <i class="fa-solid fa-check mr-1"></i> Apply Tab
@@ -1006,20 +1006,20 @@
                         transform-origin: center;
                     }
                 </style>
-                <h2 class="text-3xl font-bold text-white mb-6">Personalization</h2>
+                <h2 class="text-3xl font-bold style="color: var(--menu-text)" mb-6">Personalization</h2>
                 
                 <div class="w-full">
                     <!-- PROFILE PICTURE SECTION -->
-                    <h3 class="text-xl font-bold text-white mb-2">Profile Picture</h3>
+                    <h3 class="text-xl font-bold style="color: var(--menu-text)" mb-2">Profile Picture</h3>
                     <div id="pfpSection" class="settings-box transition-all duration-300 p-4 mb-8">
-                        <p class="text-sm font-light text-gray-400 mb-4">
+                        <p class="text-sm font-light style="color: var(--tab-text)" mb-4">
                             Choose how you appear across the site.
                         </p>
                         
                         <div class="flex flex-col gap-4">
                             <!-- Mode Selection Dropdown -->
                             <div>
-                                <label for="pfpModeSelect" class="block text-gray-400 text-sm font-light mb-2">Display Mode</label>
+                                <label for="pfpModeSelect" class="block style="color: var(--tab-text)" text-sm font-light mb-2">Display Mode</label>
                                 <select id="pfpModeSelect" class="input-select-style">
                                     <option value="google">Use Google Profile Picture</option>
                                     <option value="mibi">Use Mibi Avatar</option>
@@ -1029,7 +1029,7 @@
 
                             <!-- Mibi Avatar Settings (Hidden by default) -->
                             <div id="pfpMibiSettings" class="hidden flex flex-col gap-4 mt-2">
-                                <p class="text-sm font-light text-gray-400 mb-4">
+                                <p class="text-sm font-light style="color: var(--tab-text)" mb-4">
                                     Create your custom Mibi Avatar!
                                 </p>
                                 <button id="open-mac-menu-btn" class="btn-toolbar-style btn-primary-override">
@@ -1037,12 +1037,12 @@
                                 </button>
                                 
                                 <!-- MAC Modal -->
-                                <div id="mibi-mac-menu" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden backdrop-blur-sm">
-                                    <div class="relative bg-black rounded-xl shadow-2xl w-full max-w-5xl h-[85vh] flex flex-col overflow-hidden border border-[#333]">
+                                <div id="mibi-mac-menu" class="fixed inset-0 style="background-color: var(--navbar-bg)" bg-opacity-80 flex items-center justify-center z-50 hidden backdrop-blur-sm">
+                                    <div class="relative style="background-color: var(--navbar-bg)" rounded-xl shadow-2xl w-full max-w-5xl h-[85vh] flex flex-col overflow-hidden border style="border-color: var(--menu-border)"">
                                         
                                         <!-- Header -->
-                                        <div class="flex justify-between items-center p-6 border-b border-[#333] bg-black">
-                                            <h3 class="text-2xl font-bold text-white">Mibi Avatar Creator</h3>
+                                        <div class="flex justify-between items-center p-6 border-b style="border-color: var(--menu-border)" style="background-color: var(--navbar-bg)"">
+                                            <h3 class="text-2xl font-bold style="color: var(--menu-text)"">Mibi Avatar Creator</h3>
                                             <button id="mac-close-x-btn" class="btn-toolbar-style w-10 h-10 flex items-center justify-center p-0">
                                                 <i class="fa-solid fa-xmark fa-xl"></i>
                                             </button>
@@ -1052,8 +1052,8 @@
                                         <div class="flex flex-grow overflow-hidden relative">
                                             
                                             <!-- LEFT: Live Preview -->
-                                            <div id="mac-preview-wrapper" class="w-1/2 flex flex-col items-center justify-center bg-[#0a0a0a] p-8 border-r border-[#333] transition-all duration-500 ease-in-out z-10">
-                                                <div class="relative h-64 md:h-80 aspect-square rounded-full overflow-hidden border-4 border-[#333] shadow-lg mb-6 transition-all duration-300 hover:border-dashed hover:border-white cursor-pointer flex-shrink-0" id="mac-preview-container" style="aspect-ratio: 1/1;">
+                                            <div id="mac-preview-wrapper" class="w-1/2 flex flex-col items-center justify-center style="background-color: var(--menu-bg)" p-8 border-r style="border-color: var(--menu-border)" transition-all duration-500 ease-in-out z-10">
+                                                <div class="relative h-64 md:h-80 aspect-square rounded-full overflow-hidden border-4 style="border-color: var(--menu-border)" shadow-lg mb-6 transition-all duration-300 hover:border-dashed hover:border-white cursor-pointer flex-shrink-0" id="mac-preview-container" style="aspect-ratio: 1/1;">
                                                     <!-- Background (Static) -->
                                                     <div id="mac-preview-bg" class="absolute inset-0 w-full h-full transition-colors duration-300"></div>
                                                     
@@ -1068,14 +1068,14 @@
                                                 
                                                 <div id="mac-sliders-container" class="hidden flex-col gap-6 w-full max-w-xs transition-opacity duration-300 opacity-0">
                                                     <div class="flex flex-col gap-2">
-                                                        <label class="text-xs text-gray-400 uppercase tracking-wider font-bold">Size</label>
+                                                        <label class="text-xs style="color: var(--tab-text)" uppercase tracking-wider font-bold">Size</label>
                                                         <input type="range" id="mac-size-slider" min="50" max="150" value="100" list="mac-size-ticks" class="mac-slider w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer">
                                                         <datalist id="mac-size-ticks">
                                                             <option value="100"></option>
                                                         </datalist>
                                                     </div>
                                                     <div class="flex flex-col gap-2">
-                                                        <label class="text-xs text-gray-400 uppercase tracking-wider font-bold">Rotation</label>
+                                                        <label class="text-xs style="color: var(--tab-text)" uppercase tracking-wider font-bold">Rotation</label>
                                                         <input type="range" id="mac-rotation-slider" min="-180" max="180" value="0" list="mac-rotation-ticks" class="mac-slider w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer">
                                                         <datalist id="mac-rotation-ticks">
                                                             <option value="0"></option>
@@ -1088,20 +1088,20 @@
                                             </div>
 
                                             <!-- RIGHT: Controls & Options -->
-                                            <div id="mac-controls-wrapper" class="w-1/2 flex flex-col bg-black transition-transform duration-500 ease-in-out translate-x-0">
+                                            <div id="mac-controls-wrapper" class="w-1/2 flex flex-col style="background-color: var(--navbar-bg)" transition-transform duration-500 ease-in-out translate-x-0">
                                                 
                                                 <!-- Tabs -->
-                                                <div class="flex border-b border-[#333]">
-                                                    <button class="mac-tab-btn flex-1 py-4 text-gray-400 hover:text-white hover:bg-[#252525] transition-colors border-b-2 border-transparent font-medium active-tab" data-tab="hats">
+                                                <div class="flex border-b style="border-color: var(--menu-border)"">
+                                                    <button class="mac-tab-btn flex-1 py-4 style="color: var(--tab-text)" hover:style="color: var(--menu-text)" hover:bg-[#252525] transition-colors border-b-2 border-transparent font-medium active-tab" data-tab="hats">
                                                         <i class="fa-solid fa-hat-wizard mr-2"></i> Hats
                                                     </button>
-                                                    <button class="mac-tab-btn flex-1 py-4 text-gray-400 hover:text-white hover:bg-[#252525] transition-colors border-b-2 border-transparent font-medium" data-tab="eyes">
+                                                    <button class="mac-tab-btn flex-1 py-4 style="color: var(--tab-text)" hover:style="color: var(--menu-text)" hover:bg-[#252525] transition-colors border-b-2 border-transparent font-medium" data-tab="eyes">
                                                         <i class="fa-solid fa-eye mr-2"></i> Eyes
                                                     </button>
-                                                    <button class="mac-tab-btn flex-1 py-4 text-gray-400 hover:text-white hover:bg-[#252525] transition-colors border-b-2 border-transparent font-medium" data-tab="mouths">
+                                                    <button class="mac-tab-btn flex-1 py-4 style="color: var(--tab-text)" hover:style="color: var(--menu-text)" hover:bg-[#252525] transition-colors border-b-2 border-transparent font-medium" data-tab="mouths">
                                                         <i class="fa-solid fa-face-smile mr-2"></i> Mouths
                                                     </button>
-                                                    <button class="mac-tab-btn flex-1 py-4 text-gray-400 hover:text-white hover:bg-[#252525] transition-colors border-b-2 border-transparent font-medium" data-tab="bg">
+                                                    <button class="mac-tab-btn flex-1 py-4 style="color: var(--tab-text)" hover:style="color: var(--menu-text)" hover:bg-[#252525] transition-colors border-b-2 border-transparent font-medium" data-tab="bg">
                                                         <i class="fa-solid fa-palette mr-2"></i> Color
                                                     </button>
                                                 </div>
@@ -1118,7 +1118,7 @@
                                         </div>
                                         
                                         <!-- Footer Actions -->
-                                        <div class="p-6 border-t border-[#333] bg-black flex justify-end gap-4 items-center">
+                                        <div class="p-6 border-t style="border-color: var(--menu-border)" style="background-color: var(--navbar-bg)" flex justify-end gap-4 items-center">
                                             <button id="mac-reset-btn" class="btn-toolbar-style mr-auto px-4 py-2 rounded-xl" title="Reset Avatar">
                                                 <i class="fa-solid fa-rotate-left"></i>
                                             </button>
@@ -1135,7 +1135,7 @@
                             <div id="pfpCustomSettings" class="hidden mt-2">
                                 <div class="flex items-center gap-4">
                                     <!-- Preview -->
-                                    <div class="w-16 h-16 rounded-full overflow-hidden border border-gray-600 flex-shrink-0 bg-black relative">
+                                    <div class="w-16 h-16 rounded-full overflow-hidden border border-gray-600 flex-shrink-0 style="background-color: var(--navbar-bg)" relative">
                                         <img id="customPfpPreview" src="" class="w-full h-full object-cover" style="display: none;">
                                         <div id="customPfpPlaceholder" class="w-full h-full flex items-center justify-center text-gray-600">
                                             <i class="fa-solid fa-user"></i>
@@ -1158,9 +1158,9 @@
                     </div>
 
                     <!-- THEME SECTION -->
-                    <h3 class="text-xl font-bold text-white mb-2">Navigation Bar Theme</h3>
+                    <h3 class="text-xl font-bold style="color: var(--menu-text)" mb-2">Navigation Bar Theme</h3>
                     <div id="themeSection" class="settings-box transition-all duration-300 p-4">
-                        <p class="text-sm font-light text-gray-400 mb-4">
+                        <p class="text-sm font-light style="color: var(--tab-text)" mb-4">
                             Select a theme for your navigation bar. This setting is saved locally and will apply a live preview.
                         </p>
                         
@@ -1179,11 +1179,11 @@
         // --- NEW: Generates the HTML for the "Data Management" section ---
         function getDataManagementContent() {
             return `
-                <h2 class="text-3xl font-bold text-white mb-6">Data Management</h2>
+                <h2 class="text-3xl font-bold style="color: var(--menu-text)" mb-6">Data Management</h2>
                 <div class="w-full">
-                    <h3 class="text-xl font-bold text-white mb-2">Export Data</h3>
+                    <h3 class="text-xl font-bold style="color: var(--menu-text)" mb-2">Export Data</h3>
                     <div class="settings-box transition-all duration-300 p-4 mb-8">
-                        <p class="text-sm font-light text-gray-400 mb-4">
+                        <p class="text-sm font-light style="color: var(--tab-text)" mb-4">
                             Export all your local game data (from LocalStorage and IndexedDB) into a single JSON file.
                             This file can be used as a backup or to transfer your data to another browser.
                         </p>
@@ -1192,7 +1192,7 @@
                         </button>
                     </div>
 
-                    <h3 class="text-xl font-bold text-white mb-2">Import Data</h3>
+                    <h3 class="text-xl font-bold style="color: var(--menu-text)" mb-2">Import Data</h3>
                     <div class="settings-box transition-all duration-300 p-4 bg-red-900/10 border-red-700/50">
                         <p class="text-sm font-light text-red-300 mb-4">
                             <i class="fa-solid fa-triangle-exclamation mr-1"></i> 
@@ -1213,19 +1213,19 @@
          */
                  function getManagementContent() {            return `
 
-                <h2 class="text-3xl font-bold text-white mb-6">Admin Management</h2>
+                <h2 class="text-3xl font-bold style="color: var(--menu-text)" mb-6">Admin Management</h2>
                 
                 <!-- Admin Management Section -->
                 <div class="w-full mb-8">
-                    <h3 class="text-xl font-bold text-white mb-2">Admin Management</h3>
+                    <h3 class="text-xl font-bold style="color: var(--menu-text)" mb-2">Admin Management</h3>
                     <div class="settings-box p-4">
-                        <p class="text-sm font-light text-gray-400 mb-4">
+                        <p class="text-sm font-light style="color: var(--tab-text)" mb-4">
                             Manage website administrators. Superadmins can add/remove other admins and designate additional superadmins.
                         </p>
 
                         <!-- Current Admins List -->
                         <div class="mb-4">
-                            <label class="block text-gray-400 text-sm font-light mb-2">Current Administrators</label>
+                            <label class="block style="color: var(--tab-text)" text-sm font-light mb-2">Current Administrators</label>
                             <div id="current-admins-list" class="flex flex-col gap-2">
                                 <!-- Admins will be loaded here by JavaScript -->
                                 <p class="text-gray-500 italic">Loading admins...</p>
@@ -1233,8 +1233,8 @@
                         </div>
 
                         <!-- Add Admin Section -->
-                        <div class="border-t border-[#252525] pt-4 mt-4">
-                            <label for="newAdminEmail" class="block text-gray-400 text-sm font-light mb-2">Add New Admin (by Email)</label>
+                        <div class="border-t style="border-color: var(--menu-border)" pt-4 mt-4">
+                            <label for="newAdminEmail" class="block style="color: var(--tab-text)" text-sm font-light mb-2">Add New Admin (by Email)</label>
                             <div class="flex gap-2">
                                 <input type="email" id="newAdminEmail" class="input-text-style flex-grow" placeholder="Enter email address">
                                 <button id="addAdminBtn" class="btn-toolbar-style btn-primary-override w-24">
@@ -1245,9 +1245,9 @@
                         </div>
 
                         <!-- Superadmin Controls (only visible to superadmin) -->
-                        <div id="superadmin-controls" class="hidden border-t border-[#252525] pt-4 mt-4">
-                            <h4 class="text-lg font-bold text-white mb-2">Superadmin Actions</h4>
-                            <p class="text-sm font-light text-gray-400 mb-4">
+                        <div id="superadmin-controls" class="hidden border-t style="border-color: var(--menu-border)" pt-4 mt-4">
+                            <h4 class="text-lg font-bold style="color: var(--menu-text)" mb-2">Superadmin Actions</h4>
+                            <p class="text-sm font-light style="color: var(--tab-text)" mb-4">
                                 Only the primary superadmin can manage other superadmins and strip admin privileges.
                             </p>
                             <div class="flex flex-col gap-3">
@@ -1322,10 +1322,10 @@
                     }
                     
                     const adminEntry = document.createElement('div');
-                    adminEntry.className = 'flex justify-between items-center bg-[#0a0a0a] border border-[#1a1a1a] rounded-md p-3';
+                    adminEntry.className = 'flex justify-between items-center style="background-color: var(--menu-bg)" border border-[#1a1a1a] rounded-md p-3';
                     adminEntry.innerHTML = `
                         <div>
-                            <span class="font-medium text-white">${admin.username || admin.email}</span>
+                            <span class="font-medium style="color: var(--menu-text)"">${admin.username || admin.email}</span>
                             ${isSuperadmin ? '<span class="text-xs text-yellow-400 ml-2 font-normal">(Superadmin)</span>' : ''}
                             ${isCurrentUser ? '<span class="text-xs text-blue-400 ml-2 font-normal">(Current User)</span>' : ''}
                         </div>
@@ -1554,31 +1554,31 @@
          */
         function getAboutContent() {
             return `
-                <h2 class="text-3xl font-bold text-white mb-4">About 4SP (4simpleproblems)</h2>
+                <h2 class="text-3xl font-bold style="color: var(--menu-text)" mb-4">About 4SP (4simpleproblems)</h2>
                 
                 <div class="about-section-content">
-                    <p class="text-lg text-gray-400 leading-relaxed">
+                    <p class="text-lg style="color: var(--tab-text)" leading-relaxed">
                         <span class="text-emphasis">4SP (4simpleproblems)</span> is a <span class="text-emphasis">Student Toolkit and Entertainment website</span> designed to boost student productivity and provide useful resources. We aim to solve four core challenges that students face every day by integrating essential tools and engaging digital content into one seamless platform.
                     </p>
                     
-                    <h3 class="text-xl font-bold text-white mt-6 mb-2">The Four Simple Problems We Address</h3>
-                    <ul class="list-disc list-inside ml-4 text-lg text-gray-400 leading-relaxed">
+                    <h3 class="text-xl font-bold style="color: var(--menu-text)" mt-6 mb-2">The Four Simple Problems We Address</h3>
+                    <ul class="list-disc list-inside ml-4 text-lg style="color: var(--tab-text)" leading-relaxed">
                         <li>Providing a <span class="text-emphasis">digital leisure platform free of advertisements</span>.</li>
                         <li>Delivering a <span class="text-emphasis">student toolkit designed for accessibility and consistent availability</span>, bypassing typical institutional network restrictions.</li>
                         <li>Establishing a <span class="text-emphasis">free, comprehensive, and reliable entertainment and resource hub</span>.</li>
                         <li>Enforcing <span class="text-emphasis">internal governance and balance of power</span>: Administrative authority is strictly limited to necessary website management functions, and only the creator holds full administrative power, ensuring neutrality.</li>
                     </ul>
 
-                    <p class="text-lg text-gray-400 mt-4 leading-relaxed">
+                    <p class="text-lg style="color: var(--tab-text)" mt-4 leading-relaxed">
                         Features currently include an <span class="text-emphasis">online notebook</span> in the Notes App for secure organization, a <span class="text-emphasis">live clock</span> on the dashboard, a <span class="text-emphasis">dictionary</span> for quick lookups, and more tools.
                     </p>
                     
-                    <h3 class="text-xl font-bold text-white mt-6 mb-2">Version</h3>
-                    <p class="text-gray-400">
+                    <h3 class="text-xl font-bold style="color: var(--menu-text)" mt-6 mb-2">Version</h3>
+                    <p class="style="color: var(--tab-text)"">
                         Current Version: <span class="text-blue-400 text-emphasis">5.0.17</span>
                     </p>
 
-                    <h3 class="text-xl font-bold text-white mt-6 mb-3">Connect & Support</h3>
+                    <h3 class="text-xl font-bold style="color: var(--menu-text)" mt-6 mb-3">Connect & Support</h3>
                     <div class="social-link-group">
                         <a href="https://www.youtube.com/@4simpleproblems" target="_blank" class="btn-toolbar-style" title="YouTube">
                             <i class="fa-brands fa-youtube fa-lg mr-2"></i> YouTube
@@ -1594,7 +1594,7 @@
                         </a>
                     </div>
                     
-                    <h3 class="text-xl font-bold text-white mt-6 mb-3">Legal Information</h3>
+                    <h3 class="text-xl font-bold style="color: var(--menu-text)" mt-6 mb-3">Legal Information</h3>
                     <div class="legal-buttons">
                         <a href="../legal.html#terms-of-service" class="btn-toolbar-style">Terms of Service</a>
                         <a href="../legal.html#privacy-policy" class="btn-toolbar-style">Privacy Policy</a>
@@ -1608,7 +1608,7 @@
          */
         function getComingSoonContent(title) {
             return `
-                <h2 class="text-3xl font-bold text-white mb-2">${title}</h2>
+                <h2 class="text-3xl font-bold style="color: var(--menu-text)" mb-2">${title}</h2>
                 <div style="flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
                     <p class="text-xl text-gray-500 italic">...Coming Soon...</p>
                     <i class="fa-solid fa-hourglass-start fa-5x text-gray-700 mt-4"></i>
@@ -1730,7 +1730,7 @@
                 const customWrapper = document.createElement('div');
                 // Match size and roundness + flex-shrink-0
                 customWrapper.className = 'w-10 h-10 rounded-xl bg-[#333] flex items-center justify-center cursor-pointer hover:bg-[#444] relative overflow-hidden border-2 border-transparent hover:border-dashed hover:border-white flex-shrink-0';
-                customWrapper.innerHTML = '<i class="fa-solid fa-eye-dropper text-white text-sm"></i><input type="color" class="absolute inset-0 opacity-0 cursor-pointer w-full h-full">';
+                customWrapper.innerHTML = '<i class="fa-solid fa-eye-dropper style="color: var(--menu-text)" text-sm"></i><input type="color" class="absolute inset-0 opacity-0 cursor-pointer w-full h-full">';
                 const input = customWrapper.querySelector('input');
                 input.oninput = (e) => {
                     mibiAvatarState.bgColor = e.target.value;
@@ -2455,11 +2455,11 @@
 
                     
 
-                                            b.classList.remove('active-tab', 'text-white', 'border-blue-500');
+                                            b.classList.remove('active-tab', 'style="color: var(--menu-text)"', 'border-blue-500');
 
                     
 
-                                            b.classList.add('text-gray-400', 'border-transparent');
+                                            b.classList.add('style="color: var(--tab-text)"', 'border-transparent');
 
                     
 
@@ -2467,11 +2467,11 @@
 
                     
 
-                                        btn.classList.add('active-tab', 'text-white', 'border-blue-500');
+                                        btn.classList.add('active-tab', 'style="color: var(--menu-text)"', 'border-blue-500');
 
                     
 
-                                        btn.classList.remove('text-gray-400', 'border-transparent');
+                                        btn.classList.remove('style="color: var(--tab-text)"', 'border-transparent');
 
                     
 
@@ -2721,7 +2721,7 @@
             let userDocSnap = await getDoc(userDocRef);
 
             if (!userDocSnap.exists()) {
-                mainView.innerHTML = `<h2 class="text-3xl font-bold text-white mb-6">General Settings</h2><p class="text-red-400">Error: User data not found. Please log out and back in.</p>`;
+                mainView.innerHTML = `<h2 class="text-3xl font-bold style="color: var(--menu-text)" mb-6">General Settings</h2><p class="text-red-400">Error: User data not found. Please log out and back in.</p>`;
                 return;
             }
 
@@ -2802,11 +2802,11 @@
                 minLengthElement.classList.toggle('text-red-400', count < MIN_LENGTH);
                 maxLengthElement.classList.toggle('text-red-400', count > MAX_LENGTH);
                 
-                minLengthElement.classList.toggle('text-gray-400', count >= MIN_LENGTH);
-                maxLengthElement.classList.toggle('text-gray-400', count <= MAX_LENGTH);
+                minLengthElement.classList.toggle('style="color: var(--tab-text)"', count >= MIN_LENGTH);
+                maxLengthElement.classList.toggle('style="color: var(--tab-text)"', count <= MAX_LENGTH);
                 
                 charCountElement.classList.toggle('text-red-400', !isValidLength);
-                charCountElement.classList.toggle('text-gray-400', isValidLength);
+                charCountElement.classList.toggle('style="color: var(--tab-text)"', isValidLength);
 
 
                 // 2. Update button state
