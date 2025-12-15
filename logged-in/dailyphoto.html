@@ -25,8 +25,8 @@
         /* --- BASE STYLES --- */
         body { 
             font-family: 'Geist', sans-serif; 
-            background-color: #040404; 
-            color: #c0c0c0; 
+            background-color: var(--navbar-bg); 
+            color: var(--menu-text); 
             font-weight: 300; 
             overflow: hidden; /* Prevent body scroll */
             height: 100vh;
@@ -38,10 +38,10 @@
 
         /* --- THEME BUTTONS --- */
         .btn-toolbar-style {
-            background: #000000;
-            border: 1px solid #333;
+            background: var(--menu-bg);
+            border: 1px solid var(--navbar-border);
             border-radius: 0.75rem;
-            color: #d1d5db;
+            color: var(--menu-text);
             padding: 0.5rem 1rem;
             font-weight: 500;
             cursor: pointer;
@@ -101,8 +101,8 @@
             left: 0;
             bottom: 0;
             width: 350px;
-            background-color: #000000;
-            border-right: 1px solid #1a1a1a;
+            background-color: var(--menu-bg);
+            border-right: 1px solid var(--navbar-border);
             display: flex;
             flex-direction: column;
             z-index: 50;
@@ -122,8 +122,8 @@
         .sidebar-bottom-controls {
             display: flex;
             width: 100%;
-            border-top: 1px solid #1a1a1a;
-            background-color: #000000;
+            border-top: 1px solid var(--navbar-border);
+            background-color: var(--menu-bg);
             padding: 0; 
         }
         .sidebar-control-btn {
@@ -145,9 +145,9 @@
 
         /* --- LISTS --- */
         .compact-list-wrapper {
-             background-color: #000000;
+             background-color: var(--menu-bg);
              border-radius: 0.75rem; 
-             border: 1px solid #1a1a1a; 
+             border: 1px solid var(--navbar-border); 
              margin-top: 0.75rem;
         }
         .compact-list-items {
@@ -170,7 +170,7 @@
         .feed-panel { 
             margin-left: 350px; 
             height: 100%;
-            background-color: #040404;
+            background-color: var(--navbar-bg);
             padding: 0.5rem; 
             overflow-y: auto; 
         }
@@ -231,8 +231,8 @@
         }
         
         .modal-content {
-            background-color: #0d0d0d; 
-            border: 1px solid #1a1a1a;
+            background-color: var(--menu-bg); 
+            border: 1px solid var(--navbar-border);
             border-radius: 1rem;
             padding: 0; 
             max-width: 90%; width: 1200px;
@@ -268,8 +268,8 @@
             flex: 1;
             min-width: 350px;
             max-width: 400px;
-            background-color: #0d0d0d;
-            border-left: 1px solid #1a1a1a;
+            background-color: var(--menu-bg);
+            border-left: 1px solid var(--navbar-border);
             display: flex; flex-direction: column;
             padding: 1.5rem;
             position: relative;
@@ -287,12 +287,12 @@
 
         #comments-section {
             flex-grow: 1;
-            background-color: #000000; 
+            background-color: var(--menu-bg); 
             border-radius: 0.75rem;
             padding: 1rem;
             margin-bottom: 1rem;
             overflow-y: auto;
-            border: 1px solid #1a1a1a;
+            border: 1px solid var(--navbar-border);
             mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
         }

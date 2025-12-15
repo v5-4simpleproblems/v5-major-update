@@ -29,8 +29,8 @@
 
         body { 
             font-family: 'Geist', sans-serif; 
-            background-color: #040404; 
-            color: #c0c0c0; 
+            background-color: var(--navbar-bg); 
+            color: var(--menu-text); 
             transition: all 0.3s ease;
             font-size: 16px;
             overflow-x: hidden;
@@ -228,9 +228,9 @@
             margin-left: 20px;
             margin-right: 20px;
             box-sizing: border-box;
-            background-color: #0d0d0d;
-            border: 1px solid #1a1a1a;
-            color: #c0c0c0;
+            background-color: var(--menu-bg);
+            border: 1px solid var(--navbar-border);
+            color: var(--menu-text);
             resize: none; 
             outline: none;
             line-height: 1.6;
@@ -303,7 +303,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: linear-gradient(to bottom, #040404 80%, transparent);
+            background: linear-gradient(to bottom, var(--navbar-bg) 80%, transparent);
             color: var(--tab-text, #9ca3af);
             opacity: 0;
             pointer-events: none;

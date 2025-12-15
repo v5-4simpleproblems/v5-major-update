@@ -26,8 +26,8 @@
         /* --- FONT & BASE STYLING (MATCHING template) --- */
         body { 
             font-family: 'Geist', sans-serif; 
-            background-color: #040404; 
-            color: #c0c0c0; 
+            background-color: var(--navbar-bg); 
+            color: var(--menu-text); 
             transition: all 0.3s ease;
             font-size: 16px;
             font-weight: 300;
@@ -47,10 +47,10 @@
         /* MODIFICATION: These styles are now HARD-CODED to the default theme */
         
         .btn-toolbar-style {
-            background: #0000000;
-            border: 1px solid #333;
+            background: var(--menu-bg);
+            border: 1px solid var(--navbar-border);
             border-radius: 0.75rem;
-            color: #d1d5db;
+            color: var(--menu-text);
             padding: 0.5rem 1rem;
             font-weight: 500;
             cursor: pointer;
@@ -137,8 +137,8 @@
         #settings-main-view {
             flex-grow: 1;
             padding: 20px;
-            background-color: #0d0d0d;
-            border: 1px solid #1a1a1a;
+            background-color: var(--menu-bg);
+            border: 1px solid var(--navbar-border);
             border-radius: 0.75rem;
             min-height: 100%; 
             display: flex;

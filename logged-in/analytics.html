@@ -23,8 +23,8 @@
     <style>
         body { 
             font-family: 'Geist', sans-serif; 
-            background-color: #040404; 
-            color: #c0c0c0; 
+            background-color: var(--navbar-bg); 
+            color: var(--menu-text); 
             transition: all 0.3s ease;
             font-size: 16px;
             overflow-x: hidden;
@@ -177,6 +177,12 @@
             border-radius: 0.5rem;
             margin-bottom: 1rem;
         }
+        
+        /* Theme Overrides */
+        .bg-theme-page { background-color: var(--navbar-bg) !important; }
+        .bg-theme-menu { background-color: var(--menu-bg) !important; }
+        .border-theme { border-color: var(--navbar-border) !important; }
+        .text-theme { color: var(--menu-text) !important; }
     </style>
 </head>
 <body class="min-h-screen pb-10">
@@ -188,7 +194,7 @@
                 <h1 class="text-3xl font-bold text-white mb-2">Analytics</h1>
                 <p class="text-gray-400">System overview and user management.</p>
             </div>
-            <div class="flex gap-4 border-b border-[#1a1a1a] w-full sm:w-auto overflow-x-auto">
+            <div class="flex gap-4 border-b border-theme w-full sm:w-auto overflow-x-auto">
                 <button class="tab-btn active whitespace-nowrap" data-tab="users">User Management</button>
                 <button class="tab-btn whitespace-nowrap" data-tab="traffic">Site Traffic</button>
                 <button class="tab-btn whitespace-nowrap" data-tab="health">System Health</button>
@@ -202,7 +208,7 @@
                 <div class="chart-container">
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="text-white text-lg">New Users</h3>
-                        <select id="chart-period" class="bg-[#1a1a1a] text-gray-300 border border-[#333] rounded px-2 py-1 text-sm focus:outline-none">
+                        <select id="chart-period" class="bg-[#1a1a1a] text-gray-300 border border-theme rounded px-2 py-1 text-sm focus:outline-none">
                             <option value="week">Past Week</option>
                             <option value="month" selected>Past Month</option>
                             <option value="year">Past Year</option>
@@ -214,19 +220,19 @@
                 </div>
                 
                  <div class="grid grid-cols-2 gap-4 h-full">
-                    <div class="bg-[#0d0d0d] border border-[#1a1a1a] rounded-xl p-6 flex flex-col justify-center items-center">
+                    <div class="bg-theme-menu border border-theme rounded-xl p-6 flex flex-col justify-center items-center">
                         <span class="text-gray-400 text-sm mb-2">Total Users</span>
                         <span id="total-users-count" class="text-4xl text-white font-light">--</span>
                     </div>
-                    <div class="bg-[#0d0d0d] border border-[#1a1a1a] rounded-xl p-6 flex flex-col justify-center items-center">
+                    <div class="bg-theme-menu border border-theme rounded-xl p-6 flex flex-col justify-center items-center">
                         <span class="text-gray-400 text-sm mb-2">Admins</span>
                         <span id="total-admins-count" class="text-4xl text-blue-400 font-light">--</span>
                     </div>
-                     <div class="bg-[#0d0d0d] border border-[#1a1a1a] rounded-xl p-6 flex flex-col justify-center items-center">
+                     <div class="bg-theme-menu border border-theme rounded-xl p-6 flex flex-col justify-center items-center">
                         <span class="text-gray-400 text-sm mb-2">Banned</span>
                         <span id="total-banned-count" class="text-4xl text-red-400 font-light">--</span>
                     </div>
-                     <div class="bg-[#0d0d0d] border border-[#1a1a1a] rounded-xl p-6 flex flex-col justify-center items-center">
+                     <div class="bg-theme-menu border border-theme rounded-xl p-6 flex flex-col justify-center items-center">
                         <span class="text-gray-400 text-sm mb-2">Reports</span>
                         <span id="total-reports-count" class="text-4xl text-yellow-400 font-light">0</span>
                     </div>
@@ -234,12 +240,12 @@
             </div>
 
             <!-- User List Section -->
-            <div class="bg-[#0d0d0d] border border-[#1a1a1a] rounded-xl overflow-hidden">
-                <div class="p-4 border-b border-[#1a1a1a] flex justify-between items-center flex-wrap gap-4">
+            <div class="bg-theme-menu border border-theme rounded-xl overflow-hidden">
+                <div class="p-4 border-b border-theme flex justify-between items-center flex-wrap gap-4">
                     <h3 class="text-white text-lg">User Directory</h3>
                     <div class="flex gap-4">
-                        <input type="text" id="user-search" placeholder="Search users..." class="bg-[#1a1a1a] text-white border border-[#333] rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-blue-500 w-64">
-                        <select id="user-sort" class="bg-[#1a1a1a] text-gray-300 border border-[#333] rounded-lg px-3 py-2 text-sm focus:outline-none">
+                        <input type="text" id="user-search" placeholder="Search users..." class="bg-[#1a1a1a] text-white border border-theme rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-blue-500 w-64">
+                        <select id="user-sort" class="bg-[#1a1a1a] text-gray-300 border border-theme rounded-lg px-3 py-2 text-sm focus:outline-none">
                             <option value="newest">Newest First</option>
                             <option value="oldest">Oldest First</option>
                             <option value="admin">Admins First</option>
@@ -272,19 +278,19 @@
         <div id="tab-traffic" class="tab-content hidden">
             <!-- Traffic Overview -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                 <div class="bg-[#0d0d0d] border border-[#1a1a1a] rounded-xl p-6">
+                 <div class="bg-theme-menu border border-theme rounded-xl p-6">
                     <div class="text-gray-400 text-sm mb-2">Total Sessions</div>
                     <div id="stat-total-sessions" class="text-3xl text-white font-light">--</div>
                 </div>
-                <div class="bg-[#0d0d0d] border border-[#1a1a1a] rounded-xl p-6">
+                <div class="bg-theme-menu border border-theme rounded-xl p-6">
                     <div class="text-gray-400 text-sm mb-2">Avg Duration</div>
                     <div id="stat-avg-duration" class="text-3xl text-blue-400 font-light">--</div>
                 </div>
-                 <div class="bg-[#0d0d0d] border border-[#1a1a1a] rounded-xl p-6">
+                 <div class="bg-theme-menu border border-theme rounded-xl p-6">
                     <div class="text-gray-400 text-sm mb-2">Total Page Views</div>
                     <div id="stat-total-views" class="text-3xl text-purple-400 font-light">--</div>
                 </div>
-                 <div class="bg-[#0d0d0d] border border-[#1a1a1a] rounded-xl p-6">
+                 <div class="bg-theme-menu border border-theme rounded-xl p-6">
                     <div class="text-gray-400 text-sm mb-2">Active (24h)</div>
                     <div id="stat-active-24h" class="text-3xl text-green-400 font-light">--</div>
                 </div>
@@ -292,8 +298,8 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <!-- Most Visited Pages -->
-                <div class="bg-[#0d0d0d] border border-[#1a1a1a] rounded-xl overflow-hidden h-fit">
-                    <div class="p-4 border-b border-[#1a1a1a]">
+                <div class="bg-theme-menu border border-theme rounded-xl overflow-hidden h-fit">
+                    <div class="p-4 border-b border-theme">
                         <h3 class="text-white text-lg">Top Pages</h3>
                     </div>
                     <div class="overflow-x-auto">
@@ -311,8 +317,8 @@
                 </div>
 
                 <!-- Recent Sessions -->
-                <div class="bg-[#0d0d0d] border border-[#1a1a1a] rounded-xl overflow-hidden h-fit">
-                    <div class="p-4 border-b border-[#1a1a1a]">
+                <div class="bg-theme-menu border border-theme rounded-xl overflow-hidden h-fit">
+                    <div class="p-4 border-b border-theme">
                          <h3 class="text-white text-lg">Recent Sessions</h3>
                     </div>
                     <div class="overflow-x-auto">
@@ -356,8 +362,8 @@
             </div>
 
             <!-- Bugged Docs Section -->
-            <div class="bg-[#0d0d0d] border border-[#1a1a1a] rounded-xl overflow-hidden">
-                <div class="p-4 border-b border-[#1a1a1a]">
+            <div class="bg-theme-menu border border-theme rounded-xl overflow-hidden">
+                <div class="p-4 border-b border-theme">
                     <h3 class="text-white text-lg">Data Integrity</h3>
                     <p class="text-sm text-gray-500">Potential orphaned documents or incomplete records.</p>
                 </div>
@@ -414,7 +420,7 @@
 
                 <div>
                     <label class="block text-sm text-gray-500 mb-2">Reason (Optional)</label>
-                    <textarea id="ban-reason" class="w-full bg-[#1a1a1a] text-white border border-[#333] rounded-lg p-3 text-sm focus:outline-none focus:border-red-500 min-h-[100px]" placeholder="Enter reason for ban..."></textarea>
+                    <textarea id="ban-reason" class="w-full bg-[#1a1a1a] text-white border border-theme rounded-lg p-3 text-sm focus:outline-none focus:border-red-500 min-h-[100px]" placeholder="Enter reason for ban..."></textarea>
                 </div>
                 
                 <input type="hidden" id="ban-link" value="">
@@ -912,21 +918,21 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 text-sm">
-                    <div class="p-3 bg-[#111] rounded border border-[#333]">
+                    <div class="p-3 bg-[#111] rounded border border-theme">
                         <span class="block text-gray-500 text-xs uppercase mb-1">Created At</span>
                         <span class="text-gray-300">${formatDate(user.createdAt)}</span>
                     </div>
-                     <div class="p-3 bg-[#111] rounded border border-[#333]">
+                     <div class="p-3 bg-[#111] rounded border border-theme">
                         <span class="block text-gray-500 text-xs uppercase mb-1">Auth Method</span>
                         <span class="text-gray-300 flex items-center gap-2">
                              ${getProviderHtml(user.authMethod)} ${user.authMethod || 'Unknown'}
                         </span>
                     </div>
-                     <div class="p-3 bg-[#111] rounded border border-[#333]">
+                     <div class="p-3 bg-[#111] rounded border border-theme">
                         <span class="block text-gray-500 text-xs uppercase mb-1">Role</span>
                         <span class="text-gray-300">${admins.has(user.id) ? 'Admin' : 'User'}</span>
                     </div>
-                    <div class="p-3 bg-[#111] rounded border border-[#333]">
+                    <div class="p-3 bg-[#111] rounded border border-theme">
                         <span class="block text-gray-500 text-xs uppercase mb-1">Status</span>
                         <span class="text-gray-300">${bannedUsers.has(user.id) ? 'Banned' : 'Active'}</span>
                     </div>

@@ -31,8 +31,8 @@
 
         body { 
             font-family: 'Geist', sans-serif; 
-            background-color: #040404; 
-            color: #c0c0c0; 
+            background-color: var(--navbar-bg); 
+            color: var(--menu-text); 
             transition: all 0.3s ease;
             font-size: 16px;
             overflow-x: hidden;
@@ -93,8 +93,8 @@
             left: 0;
             right: 0;
             margin-top: 0.5rem;
-            background: #0d0d0d;
-            border: 1px solid #333;
+            background: var(--menu-bg);
+            border: 1px solid var(--navbar-border);
             border-radius: 0.75rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             z-index: 100;
@@ -136,8 +136,8 @@
 
         /* --- WEATHER CARDS --- */
         .weather-card {
-            background-color: #0d0d0d;
-            border: 1px solid #1a1a1a;
+            background-color: var(--menu-bg);
+            border: 1px solid var(--navbar-border);
             border-radius: 1rem;
             padding: 1.5rem;
             transition: border-color 0.2s;
@@ -171,8 +171,8 @@
         }
         .hourly-item {
             min-width: 80px;
-            background: #111;
-            border: 1px solid #222;
+            background: var(--menu-bg);
+            border: 1px solid var(--navbar-border);
             border-radius: 0.75rem;
             padding: 1rem 0.5rem;
             display: flex;
@@ -208,7 +208,7 @@
         #loading-overlay {
             position: fixed;
             inset: 0;
-            background: #040404;
+            background: var(--navbar-bg);
             z-index: 50;
             display: flex;
             flex-direction: column;
@@ -243,8 +243,8 @@
         }
         #hourly-modal-overlay.active { opacity: 1; pointer-events: auto; }
         .modal-content {
-            background: #0d0d0d;
-            border: 1px solid #333;
+            background: var(--menu-bg);
+            border: 1px solid var(--navbar-border);
             border-radius: 1rem;
             padding: 2rem;
             width: 90%;

@@ -26,11 +26,11 @@
                         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
                     },
                     colors: {
-                        'background': '#040404',
-                        'card': '#1a1a1a',
-                        'border-strong': '#374151',
-                        'text-primary': '#c0c0c0',
-                        'text-secondary': '#9ca3af',
+                        'background': 'var(--navbar-bg)',
+                        'card': 'var(--menu-bg)',
+                        'border-strong': 'var(--navbar-border)',
+                        'text-primary': 'var(--menu-text)',
+                        'text-secondary': 'var(--tab-text)',
                     }
                 }
             }
@@ -45,8 +45,8 @@
         }
         body { 
             font-family: 'Geist', sans-serif; 
-            background-color: #040404; 
-            color: #c0c0c0; 
+            background-color: var(--navbar-bg); 
+            color: var(--menu-text); 
             font-weight: 300; /* Base font weight */
             display: flex;
             align-items: center;
@@ -71,7 +71,7 @@
             width: 100vw;
             height: 100vh;
             display: flex;
-            background-color: #040404;
+            background-color: var(--navbar-bg);
             padding: 32px 0 0 0; 
             box-sizing: border-box; /* Include padding in the height calculation */
         }
@@ -80,8 +80,8 @@
         .left-column {
             width: 350px; /* Fixed width for steps/navigation */
             flex-shrink: 0;
-            background-color: #111111;
-            border-right: 1px solid #374151;
+            background-color: var(--menu-bg);
+            border-right: 1px solid var(--navbar-border);
             padding: 40px 30px;
             display: flex;
             flex-direction: column;
